@@ -875,6 +875,42 @@ body.unlocked .venue-card {
     animation: none;
   }
 }
+/* SCROLL-TRIGGERED SLIDE-UP AND FADE-IN */
+
+.welcome-inner,
+.scratch-inner,
+.gallery-inner,
+.countdown-inner,
+.venue-inner {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.welcome-card.animate-in .welcome-inner,
+.scratch-card.animate-in .scratch-inner,
+.gallery-card.animate-in .gallery-inner,
+.countdown-card.animate-in .countdown-inner,
+.venue-card.animate-in .venue-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Replay the animation when scrolling back to a page */
+@media (prefers-reduced-motion: reduce) {
+  .welcome-inner,
+  .scratch-inner,
+  .gallery-inner,
+  .countdown-inner,
+  .venue-inner {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 </style>
 </head>
 
@@ -1572,7 +1608,27 @@ body.unlocked .venue-card {
       }
     }, 3000);
   }
+/* REPLAY PAGE ANIMATION WHEN SCROLLING */
 
+const animatedCards = document.querySelectorAll(
+  ".welcome-card, .scratch-card, .gallery-card, .countdown-card, .venue-card"
+);
+
+const pageObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animate-in");
+    } else {
+      entry.target.classList.remove("animate-in");
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+animatedCards.forEach(card => {
+  pageObserver.observe(card);
+});
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
       if (galleryTimer) clearInterval(galleryTimer);
