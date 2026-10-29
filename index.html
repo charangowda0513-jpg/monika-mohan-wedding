@@ -10,6 +10,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
+  
+@font-face {
+  font-family: "Monotype Corsiva Web";
+  src: url("./monotype-corsiva.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --rust: #A94725;
   --dark-rust: #8F351D;
@@ -99,7 +108,7 @@ body.locked {
 }
 
 .wedding-message h1 {
-  font-family: "Monotype Corsiva", cursive;
+font-family: "Monotype Corsiva Web", cursive;
   font-size: clamp(48px, 11vw, 76px);
   font-weight: normal;
   font-style: normal;
@@ -119,7 +128,7 @@ body.locked {
 
 .wedding-label {
   font-size: 12px;
-  letter-spacing: 2;
+  letter-spacing: 5;
   margin-top: 25px;
 }
 
@@ -219,7 +228,6 @@ body.locked {
 }
 
 /* DOUBLE GOLD BORDER */
-
 .card-frame {
   position: relative;
   width: 100%;
@@ -258,21 +266,23 @@ body.locked {
 
 
 .welcome-heading {
+  max-width: 430px;
   font-family: "Aldhabi", "Aldhabi Regular", serif;
+  font-size: 32px;
 }
 
 
 .welcome-copy {
   max-width: 430px;
   font-size: clamp(15px, 3.6vw, 18px);
-  line-height: 2;
+  line-height: 1;
   color: #654A38;
   margin: 0;
 }
 
 
 .welcome-names {
-  font-family: "Monotype Corsiva", cursive;
+font-family: "Monotype Corsiva Web", cursive;
   font-size: clamp(20px, 11vw, 30px);
   margin-top: 30px;
 }
@@ -355,7 +365,7 @@ body.locked {
 
 .date-text {
   display: block;
-  font-size: clamp(17px, 4.5vw, 26px);
+  font-size: clamp(10px, 4.5vw, 14px);
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -937,7 +947,7 @@ body.unlocked .venue-card {
     <h1>Monika</h1>
     <div class="ampersand">&amp;</div>
     <h1>Mohan</h1>
-    <div class="wedding-label">OUR FOREVER BEGINS</div>
+    <div class="wedding-label">BOUND BY LOVE, BLESSED BY DESTINY</div>
   </div>
 
   <div class="doors" aria-hidden="true">
@@ -958,7 +968,7 @@ body.unlocked .venue-card {
       <p class="welcome-copy">
   Two hearts, one beautiful promise, and a
   lifetime of dreams waiting to unfold.
-  <br><br>
+  <br>
   We are delighted to have you with us as
   Monika &amp; Mohan begin their forever,
   surrounded by the love and blessings of
@@ -1004,7 +1014,59 @@ body.unlocked .venue-card {
   </div>
 </section>
 
-<!-- PAGE 4: PHOTO GALLERY -->
+<!-- PAGE 4: COUNTDOWN AND WEDDING SCHEDULE -->
+
+<section class="countdown-card" aria-label="Wedding countdown and schedule">
+  <div class="card-frame">
+    <div class="countdown-inner">
+
+      <h2 class="countdown-heading">Countdown to Forever</h2>
+
+      <div class="countdown-clock" aria-label="Countdown to November 11, 2026">
+        <div class="time-box">
+          <span class="time-number" id="days">000</span>
+          <span class="time-label">DAYS</span>
+        </div>
+        <div class="time-box">
+          <span class="time-number" id="hours">00</span>
+          <span class="time-label">HOURS</span>
+        </div>
+        <div class="time-box">
+          <span class="time-number" id="minutes">00</span>
+          <span class="time-label">MINUTES</span>
+        </div>
+        <div class="time-box">
+          <span class="time-number" id="seconds">00</span>
+          <span class="time-label">SECONDS</span>
+        </div>
+      </div>
+
+      <p class="countdown-date">11 &amp; 12 November 2026</p>
+
+      <div class="schedule-divider"></div>
+      <h3 class="schedule-heading">Wedding Celebrations</h3>
+
+      <div class="event-item">
+        <p class="event-name">Reception</p>
+        <p class="event-date">11th November 2026</p>
+        <p class="event-time">Time: <strong>7:00 PM onwards</strong></p>
+      </div>
+
+      <div class="event-item">
+        <p class="event-name">Muhurtam</p>
+        <p class="event-date">12th November 2026</p>
+        <p class="event-time">Time: <strong>10:00 AM</strong></p>
+      </div>
+
+      <div class="final-welcome">
+        <h3>All Are Welcome!</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 5: PHOTO GALLERY -->
 
 <section class="gallery-card" aria-label="Photo gallery">
   <div class="card-frame">
@@ -1074,58 +1136,6 @@ body.unlocked .venue-card {
 
       <div class="gallery-bottom-line"></div>
       <p class="gallery-note">MONIKA &amp; MOHAN · 11–12 NOVEMBER 2026</p>
-    </div>
-  </div>
-</section>
-
-<!-- PAGE 5: COUNTDOWN AND WEDDING SCHEDULE -->
-
-<section class="countdown-card" aria-label="Wedding countdown and schedule">
-  <div class="card-frame">
-    <div class="countdown-inner">
-
-      <h2 class="countdown-heading">Countdown to Forever</h2>
-
-      <div class="countdown-clock" aria-label="Countdown to November 11, 2026">
-        <div class="time-box">
-          <span class="time-number" id="days">000</span>
-          <span class="time-label">DAYS</span>
-        </div>
-        <div class="time-box">
-          <span class="time-number" id="hours">00</span>
-          <span class="time-label">HOURS</span>
-        </div>
-        <div class="time-box">
-          <span class="time-number" id="minutes">00</span>
-          <span class="time-label">MINUTES</span>
-        </div>
-        <div class="time-box">
-          <span class="time-number" id="seconds">00</span>
-          <span class="time-label">SECONDS</span>
-        </div>
-      </div>
-
-      <p class="countdown-date">11 &amp; 12 November 2026</p>
-
-      <div class="schedule-divider"></div>
-      <h3 class="schedule-heading">Wedding Celebrations</h3>
-
-      <div class="event-item">
-        <p class="event-name">Reception</p>
-        <p class="event-date">11th November 2026</p>
-        <p class="event-time">Time: <strong>7:00 PM onwards</strong></p>
-      </div>
-
-      <div class="event-item">
-        <p class="event-name">Muhurtam</p>
-        <p class="event-date">12th November 2026</p>
-        <p class="event-time">Time: <strong>10:00 AM</strong></p>
-      </div>
-
-      <div class="final-welcome">
-        <h3>All Are Welcome!</h3>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1437,7 +1447,7 @@ body.unlocked .venue-card {
     isRevealed = true;
     scratchCtx.clearRect(0, 0, scratchCanvas.width, scratchCanvas.height);
     scratchCanvas.style.display = "none";
-    scratchTitle.textContent = "Our Forever Begins";
+    scratchTitle.textContent = "A life of little miracles";
     saveDateButton.classList.add("visible");
     startCelebration();
   }
