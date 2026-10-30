@@ -195,7 +195,31 @@ font-family: "Monotype Corsiva Web", cursive;
 }
 
 .invitation.opened .open-hint {
-  opacity: 0;
+  opacity: 1;
+  bottom: 30px;
+  font-size: 0;
+  letter-spacing: 0;
+  animation: chevronBounce 1s ease-in-out infinite;
+}
+
+.invitation.opened .open-hint::after {
+  content: "";
+  display: block;
+  width: 11px;
+  height: 11px;
+  margin: auto;
+  border-right: 2px solid #BD914A;
+  border-bottom: 2px solid #BD914A;
+  transform: rotate(45deg);
+}
+
+@keyframes chevronBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(7px);
+  }
 }
 
 @keyframes messageFade {
@@ -950,7 +974,7 @@ animation: coupleFade 7s ease forwards;
   }
 }
 
-.Ganesha-icon {
+.ganesha-icon {
   width: 100px;
   height: 100px;
   object-fit: contain;
@@ -977,8 +1001,8 @@ animation: coupleFade 7s ease forwards;
   <div class="floral-background"></div>
 
   <div class="wedding-message">
-    <img src="./Ganesha.png"
-         class="Ganesha-icon"
+    <img src="./ganesha.png"
+         class="ganesha-icon"
          alt="Lord Ganesha">
     <div class="intro">Together with the love 
       <br>
