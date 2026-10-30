@@ -95,17 +95,12 @@ body.locked {
   pointer-events: none;
 }
 
-.tiny-heart {
-  font-size: 27px;
-  margin-bottom: 16px;
-}
-
-
 .intro {
   font-size: clamp(12px, 3vw, 15px);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 20px;
+  transform: translateY(-50px);
 }
 
 .wedding-message h1 {
@@ -116,6 +111,7 @@ font-family: "Monotype Corsiva Web", cursive;
   line-height: 1.05;
   margin: 0;
   letter-spacing: 0;
+  transform: translateY(-45px);
 }
 
 .ampersand {
@@ -124,6 +120,7 @@ font-family: "Monotype Corsiva Web", cursive;
   font-size: clamp(42px, 9vw, 60px);
   font-style: normal;
   margin: 3px 0 5px;
+  transform: translateY(-42px);
 }
 
 
@@ -131,6 +128,7 @@ font-family: "Monotype Corsiva Web", cursive;
   font-size: 12px;
   letter-spacing: 1px;
   margin-top: 25px;
+  transform: translateY(-40px);
 }
 
 .doors {
@@ -952,6 +950,18 @@ animation: coupleFade 7s ease forwards;
   }
 }
 
+.ganesha-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  transform: translateY(-55px);
+
+  filter:
+    drop-shadow(0 0 6px rgba(212, 175, 55, 0.65))
+    drop-shadow(0 0 14px rgba(212, 175, 55, 0.35));
+}
+
 </style>
 </head>
 
@@ -967,7 +977,9 @@ animation: coupleFade 7s ease forwards;
   <div class="floral-background"></div>
 
   <div class="wedding-message">
-    <div class="tiny-heart">♥</div>
+    <img src="./ganesha.png"
+         class="ganesha-icon"
+         alt="Lord Ganesha">
     <div class="intro">Together with the love 
       <br>
       and blessings of our families</div>
