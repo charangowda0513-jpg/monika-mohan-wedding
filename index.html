@@ -929,8 +929,6 @@ body.unlocked .venue-card {
   }
 }
 
-
-
 .mini-couple {
   position: absolute;
   left: 50%;
@@ -958,6 +956,9 @@ animation: coupleFade 7s ease forwards;
 </head>
 
 <body class="locked">
+  <audio id="backgroundMusic" preload="auto">
+  <source src="./wedding-music.mp3" type="audio/mpeg">
+</audio>
 
 <!-- PAGE 1: OPENING DOORS -->
 
@@ -1191,6 +1192,13 @@ animation: coupleFade 7s ease forwards;
   const invitation = document.getElementById("invitation");
   const openHint = document.getElementById("openHint");
 
+  const backgroundMusic = document.getElementById("backgroundMusic");
+
+backgroundMusic.addEventListener("ended", () => {
+  backgroundMusic.currentTime = 0.25;
+  backgroundMusic.play();
+});
+
   let isOpened = false;
   let isUnlocked = false;
 
@@ -1202,6 +1210,23 @@ function openInvitation() {
   if (isOpened) return;
 
   isOpened = true;
+  backgroundMusic.currentTime = 0.25;
+backgroundMusic.play().catch(error => {
+  console.log("Music playback could not start:", error);
+  function stopBackgroundMusic() {
+  backgroundMusic.pause();
+  backgroundMusic.currentTime = 0;
+}
+
+window.addEventListener("pagehide", stopBackgroundMusic);
+window.addEventListener("beforeunload", stopBackgroundMusic);
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    stopBackgroundMusic();
+  }
+});
+});
 
   invitation.classList.add("opened");
   openHint.textContent = "";
